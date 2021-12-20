@@ -15,15 +15,20 @@ form.addEventListener('submit', async (e) => {
 
 const makeRequest = async (form) => {
   // console.log("request Made")
-  let q = form.elements.query.value
-  let res = await axios.get(`http://api.tvmaze.com/search/shows?q=${q}`);
-  // console.log(res.data[0].show.image.medium)
-  let h4 = document.createElement('h4');
-  h4.innerHTML = `Search Results for "${q}" <br>`;
-  h4.className = 'dispSearched'
-  imgDiv.appendChild(h4);
-  imgDiv.appendChild(cardDiv);
-  return res.data
+  try {
+    let q = form.elements.query.value
+    let res = await axios.get(`http://api.tvmaze.com/search/shows?q=${q}`);
+    // console.log(res.data[0].show.image.medium)
+    let h4 = document.createElement('h4');
+    h4.innerHTML = `Search Results for "${q}" <br>`;
+    h4.className = 'dispSearched'
+    imgDiv.appendChild(h4);
+    imgDiv.appendChild(cardDiv);
+    return res.data
+  }
+  catch (e) {
+    console.log('error!! please check the code');
+  }
 }
 
 const addImages = async (shows) => {
