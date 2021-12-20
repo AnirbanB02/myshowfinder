@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Show Finder | Home</title>
+  <!-- axios library -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- bootstrap5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- /bootstrap 5 -->
+
+  <style>
+    img {
+      margin: 7px 10px;
+      border-radius: 5px;
+    }
+
+    .showCard {
+      width: 230px;
+      margin: 10px 10px;
+      background-color: rgb(118, 210, 247);
+      /* color: whitesmoke; */
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      box-shadow: -5px 5px 10px rgba(109, 109, 109, 0.349);
+
+    }
+
+    #cardsHere {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .showCard>p,
+    .showCard>h4 {
+      margin: 0 10px;
+      text-align: justify;
+    }
+    .hero{
+      background-color: rgb(118, 210, 247);
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .dispSearched{
+      text-align: center;
+      padding: 10px;
+    }
+    #query{
+      min-width: 50vw;
+    }
+    #footer{
+      position: fixed;
+      width: 100vw;
+      bottom: 0px;
+    }
+
+    @media only screen and (max-width:600px) {
+      .showCard {
+        width: 80%;
+        /* border: 5px solid red; */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Show Finder</a>
+    </div>
+  </nav>
+
+
+
+  <div class="hero">
+    <h1 class="">Search Show</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form id="searchQuery" class=" my-4 d-flex">
+          <input name="query" id="query" class="form-control me-2" type="search" placeholder="Search TV Show"
+            aria-label="Search">
+          <button class="btn btn-lg btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="imagesHere"></div>
+  </div>
+
+
+  <footer id="footer" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.linkedin.com/in/anirban-bhattacharjee-9227591b6/">Designed and Developed by Anirban Bhattacharjee</a>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="tv.js"></script>
+</body>
+
+</html>
